@@ -1,0 +1,91 @@
+/* Shared by the main client, the My AI workspace and the recording windows. */
+.box-connect-notice,
+.box-connect-status,
+.box-connect-button {
+  --box-connect-border: #e2d6c6;
+  --box-connect-surface: #faf6ee;
+  --box-connect-muted: #6f5b49;
+  --box-connect-action: #a6533f;
+}
+
+.box-connect-notice {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block: 12px;
+  padding: 16px;
+  border: 1px solid var(--box-connect-border);
+  border-radius: 12px;
+  background: var(--box-connect-surface);
+  color: #302d29;
+}
+.box-connect-notice.compact { padding: 12px; gap: 10px; }
+.box-connect-icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #f0e7da;
+  color: #775940;
+}
+.box-connect-glyph {
+  flex: none;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='M3 14h18m-13 3h.01'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.box-connect-copy { flex: 1 1 11em; min-width: 0; }
+.box-connect-copy strong { font-size: 14px; }
+.box-connect-copy p {
+  margin: 3px 0 0;
+  color: var(--box-connect-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.box-connect-button,
+.box-connect-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  appearance: none;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.box-connect-button {
+  padding: 5px 12px;
+  margin-inline-start: auto;
+  background: var(--box-connect-action);
+  color: #fff;
+}
+.box-connect-button:hover:not(:disabled) { background: #914532; color: #fff; }
+.box-connect-button:disabled { opacity: .62; cursor: default; }
+.box-connect-status {
+  -webkit-app-region: no-drag;
+  gap: 5px;
+  padding: 4px 8px;
+  border-color: var(--box-connect-border);
+  background: var(--box-connect-surface);
+  color: var(--box-connect-muted);
+  font-size: 12px;
+}
+.box-connect-status:hover { border-color: #b49678; }
+.box-connect-status .box-connect-glyph { width: 16px; height: 16px; }
+:is(.box-connect-button, .box-connect-status):focus-visible { outline: 2px solid #914532; outline-offset: 2px; }
+
+@media (max-width: 980px) {
+  .box-connect-status { padding-inline: 7px; }
+  .box-connect-status .box-connect-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+}

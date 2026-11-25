@@ -1,0 +1,10 @@
+{
+  "applicationId": "centaurai.memobox.recording",
+  "name": "会议录音智能体",
+  "version": "0.1.0",
+  "protocolVersion": 1,
+  "runtime": "electron",
+  "launchMode": "shared",
+  "entrypoint": "main.mjs",
+  "description": "记录会议、培训和交谈，回听原音并生成可修订的会议报告。"
+}
